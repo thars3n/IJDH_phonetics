@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!-- saved from url=(0177)https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/Phonemes/Phonemes.html#//apple_ref/doc/uid/TP40004365-CH9-SW1 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+    <title>Phonemes</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    
+    <meta id="book-resource-type" name="book-resource-type" content="Guide">
+    <meta scheme="apple_ref" id="identifier" name="identifier" content="//apple_ref/doc/uid/TP40004365">
+    <meta id="document-version" name="document-version" content="1.2.0">
+    <meta id="build" name="build" content="c1e4c7a89af8f899a21cfa81fc33ba42">
+    <meta id="chapterId" name="chapterId" content="TP40004365-CH9">
+    <meta id="date" name="date" content="2006-09-05">
+    <meta id="description" name="description" content="Describes speech synthesis in OS X and explains how your application can produce customized spoken output.">
+    <meta id="book-title" name="book-title" content="Speech Synthesis Programming Guide">
+    <meta id="book-root" name="book-root" content="../">
+    <meta id="book-json" name="book-json" content="../book.json">
+    <meta id="devcenter" name="devcenter" content="Mac Dev Center">
+    <meta id="devcenter-url" name="devcenter-url" content="http://developer.apple.com/devcenter/mac">
+    <meta id="reflib" name="reflib" content="Documentation Archive">
+    <meta id="book-assignments" name="book-assignments" content="{Type/Guide}, {Technologies/Core Services Layer/ApplicationServices}, {Topic/User Experience/Speech Technologies}">
+    
+    
+    <meta id="copyright" name="copyright" content="Copyright 2018 Apple Inc. All Rights Reserved.">
+    <meta id="xcode-display" name="xcode-display" content="render">
+    <meta id="IndexTitle" name="IndexTitle" content="Speech Synthesis Programming Guide: Phonemes">
+    <meta id="resources-uri" name="resources-uri" content="../../../../../Resources/1282">
+    <link id="book-index-page" rel="Start" title="Speech Synthesis Programming Guide" type="text/html" href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/index.html">
+    <link id="next-page" rel="Next" type="text/html" href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/Glossary/Glossary.html">
+    <link id="previous-page" rel="Prev" type="text/html" href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/CommandSyntax/CommandSyntax.html">
+    <link rel="stylesheet" type="text/css" href="./Phonemes_files/screen.css">
+    
+    <!-- xcode_css -->
+    <link rel="stylesheet" type="text/css" href="./Phonemes_files/feedback.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta id="platforms" name="platforms" content="">
+</head>    
+<body class="isShowingTOC" id=""><a name="//apple_ref/doc/uid/TP40004365-CH9" title="Phonemes"></a>
+    <div id="_omniture_top">
+    <!-- SiteCatalyst code version: H.8. Copyright 1997-2006 Omniture, Inc. -->
+    <script type="text/javascript">
+    /* RSID: */
+    var s_account="appleglobal,appleusdeveloper,dappdeveloperlib"
+    </script>
+
+    <script type="text/javascript" src="./Phonemes_files/s_code_h.js"></script>
+    <script type="text/javascript">
+    s.pageName=AC.Tracking.pageName();
+    s.channel="www.us.developer"
+
+    /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+    var s_code=s.t();if(s_code)document.write(s_code)</script>
+    <!-- End SiteCatalyst code version: H.8. -->
+    </div>
+
+    <div id="adcHeader" class="hideOnPrint hideInXcode">
+        <div id="ssi_Header" class="hideInXcode unified">
+            <a id="ssi_LibraryTitle" href="https://developer.apple.com/library/archive/navigation/" onclick="s_objectID=&quot;https://developer.apple.com/library/archive/navigation/_1&quot;;return this.s_oc?this.s_oc(e):true">Documentation Archive</a>
+            <a id="ssi_AppleDeveloperConnection" href="https://developer.apple.com/" onclick="s_objectID=&quot;https://developer.apple.com/_1&quot;;return this.s_oc?this.s_oc(e):true">Developer</a>
+            <div id="ssi_SearchButton" role="button" title="Search">Search</div>
+        </div>
+        <form id="ssi_SearchMenu" method="get" action="https://developer.apple.com/library/archive/search/" accept-charset="utf-8">
+            <label for="adcsearch">Search Documentation Archive</label>
+            
+            
+    
+            <input type="search" id="ssi_SearchField" name="q" accesskey="s" results="5">
+        </form>
+    </div>
+
+    <header id="header">
+        <div id="title" role="banner">
+            <h1>Speech Synthesis Programming Guide</h1>
+            <span id="file_links">
+                <a id="PDF_link" role="button" tabindex="4" rel="alternate" title="Download PDF" class=""><span id="pdf_icon"></span>PDF</a>
+                <a id="Companion_link" role="button" tabindex="3" title="Download Companion File" class=""><span id="companion_icon"></span>Companion File</a>
+            </span>
+        </div>
+        <ul id="headerButtons" class="hideOnPrint" role="toolbar">
+            <li id="toc_button" style="">
+                <button tabindex="5" id="table_of_contents" class="open" role="checkbox" aria-label="Show Table of Contents"><span class="disclosure"></span>Table of Contents</button>
+            </li>
+            <li id="jumpto_button" style="display:none" role="navigation"><select tabindex="6" id="jumpTo"><option value="top">Jump To…</option></select></li>
+            <li id="downloadSample_button" style="display:none">
+                <a id="Sample_link"><button id="Sample_button">Download Sample Code</button></a>
+            </li>
+        </ul>
+    </header>
+    <nav id="tocContainer" tabindex="7" class="isShowingTOC">
+        <ul id="toc" role="tree"><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH1-SW1"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40004365-CH1-SW1">Introduction</a></span></li><li class="children " data-aref="//apple_ref/doc/uid/TP40004365-CH3-SW6" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/SpeechOverview/SpeechOverview.html#//apple_ref/doc/uid/TP40004365-CH3-SW6">Speech Synthesis in OS X</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH3-SW10"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/SpeechOverview/SpeechOverview.html#//apple_ref/doc/uid/TP40004365-CH3-SW10">Why Use Synthesized Speech?</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH3-SW2"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/SpeechOverview/SpeechOverview.html#//apple_ref/doc/uid/TP40004365-CH3-SW2">Spoken Output and Accessibility</a></span></li><li class="children " data-aref="//apple_ref/doc/uid/TP40004365-CH3-SW16" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/SpeechOverview/SpeechOverview.html#//apple_ref/doc/uid/TP40004365-CH3-SW16">Speech Synthesis Concepts and Components</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH3-SW9"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/SpeechOverview/SpeechOverview.html#//apple_ref/doc/uid/TP40004365-CH3-SW9">The Speech Generation Process</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH3-SW1"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/SpeechOverview/SpeechOverview.html#//apple_ref/doc/uid/TP40004365-CH3-SW1">Representations of Speech</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH3-SW8"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/SpeechOverview/SpeechOverview.html#//apple_ref/doc/uid/TP40004365-CH3-SW8">Voices</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH3-SW12"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/SpeechOverview/SpeechOverview.html#//apple_ref/doc/uid/TP40004365-CH3-SW12">Speech Channels</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH3-SW13"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/SpeechOverview/SpeechOverview.html#//apple_ref/doc/uid/TP40004365-CH3-SW13">Notifications, Callbacks, and Speech Synchronization</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH3-SW7"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/SpeechOverview/SpeechOverview.html#//apple_ref/doc/uid/TP40004365-CH3-SW7">The MacinTalk Synthesizer</a></span></li><li class="children " data-aref="//apple_ref/doc/uid/TP40004365-CH3-SW4" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/SpeechOverview/SpeechOverview.html#//apple_ref/doc/uid/TP40004365-CH3-SW4">Attributes of Synthesized Speech</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH3-SW17"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/SpeechOverview/SpeechOverview.html#//apple_ref/doc/uid/TP40004365-CH3-SW17">Speech Rate</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH3-SW18"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/SpeechOverview/SpeechOverview.html#//apple_ref/doc/uid/TP40004365-CH3-SW18">Speech Pitch, Frequency, and Pitch Modulation</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH3-SW20"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/SpeechOverview/SpeechOverview.html#//apple_ref/doc/uid/TP40004365-CH3-SW20">Speech Volume</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH3-SW21"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/SpeechOverview/SpeechOverview.html#//apple_ref/doc/uid/TP40004365-CH3-SW21">Prosody</a></span></li></ul></li></ul></li><li class="children " data-aref="//apple_ref/doc/uid/TP40004365-CH3-SW3" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/SpeechOverview/SpeechOverview.html#//apple_ref/doc/uid/TP40004365-CH3-SW3">Opportunities for the Customization of Synthesized Speech</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH3-SW22"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/SpeechOverview/SpeechOverview.html#//apple_ref/doc/uid/TP40004365-CH3-SW22">Use Different Voices</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH3-SW11"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/SpeechOverview/SpeechOverview.html#//apple_ref/doc/uid/TP40004365-CH3-SW11">Adjust Speech Attributes and Control Speech Production Using the Speech Synthesis APIs</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH3-SW5"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/SpeechOverview/SpeechOverview.html#//apple_ref/doc/uid/TP40004365-CH3-SW5">Control Speech Quality Using Embedded Speech Commands</a></span></li></ul></li></ul></li><li class="children " data-aref="//apple_ref/doc/uid/TP40004365-CH4-SW2" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/UsingSpeech/UsingSpeech.html#//apple_ref/doc/uid/TP40004365-CH4-SW2">Designing and Implementing an Application That Speaks</a></span><ul><li class="children " data-aref="//apple_ref/doc/uid/TP40004365-CH4-SW12" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/UsingSpeech/UsingSpeech.html#//apple_ref/doc/uid/TP40004365-CH4-SW12">Strategies for Incorporating Synthesized Speech</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH4-SW13"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/UsingSpeech/UsingSpeech.html#//apple_ref/doc/uid/TP40004365-CH4-SW13">Take Advantage of System-Provided Functionality</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH4-SW14"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/UsingSpeech/UsingSpeech.html#//apple_ref/doc/uid/TP40004365-CH4-SW14">Provide Some Customization</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH4-SW16"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/UsingSpeech/UsingSpeech.html#//apple_ref/doc/uid/TP40004365-CH4-SW16">Provide Advanced Customization</a></span></li></ul></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH4-SW3"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/UsingSpeech/UsingSpeech.html#//apple_ref/doc/uid/TP40004365-CH4-SW3">User Interface Design Guidelines for Speech</a></span></li><li class="children " data-aref="//apple_ref/doc/uid/TP40004365-CH4-SW1" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/UsingSpeech/UsingSpeech.html#//apple_ref/doc/uid/TP40004365-CH4-SW1">Carbon and Cocoa Speech Synthesis APIs Compared</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH4-SW17"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/UsingSpeech/UsingSpeech.html#//apple_ref/doc/uid/TP40004365-CH4-SW17">Overview of the Cocoa Speech Synthesis API</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH4-SW6"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/UsingSpeech/UsingSpeech.html#//apple_ref/doc/uid/TP40004365-CH4-SW6">Overview of the Carbon Speech Synthesis API</a></span></li></ul></li><li class="children " data-aref="//apple_ref/doc/uid/TP40004365-CH4-SW8" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/UsingSpeech/UsingSpeech.html#//apple_ref/doc/uid/TP40004365-CH4-SW8">Implementing Basic Speech Synthesis Tasks Using Cocoa and Carbon</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH4-SW11"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/UsingSpeech/UsingSpeech.html#//apple_ref/doc/uid/TP40004365-CH4-SW11">Generating Speech Using the Cocoa Speech Synthesis API</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH4-SW18"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/UsingSpeech/UsingSpeech.html#//apple_ref/doc/uid/TP40004365-CH4-SW18">Generating Speech Using the Carbon Speech Synthesis API</a></span></li></ul></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH4-SW19"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/UsingSpeech/UsingSpeech.html#//apple_ref/doc/uid/TP40004365-CH4-SW19">Using AppleScript to Produce Spoken Output</a></span></li></ul></li><li class="children " data-aref="//apple_ref/doc/uid/TP40004365-CH5-SW3" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/FineTuning/FineTuning.html#//apple_ref/doc/uid/TP40004365-CH5-SW3">Techniques for Customizing Synthesized Speech</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH5-SW13"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/FineTuning/FineTuning.html#//apple_ref/doc/uid/TP40004365-CH5-SW13">Adjust Speech Channel Settings Using the Carbon Speech Synthesis API</a></span></li><li class="children " data-aref="//apple_ref/doc/uid/TP40004365-CH5-SW10" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/FineTuning/FineTuning.html#//apple_ref/doc/uid/TP40004365-CH5-SW10">Use Embedded Speech Commands to Fine-Tune Spoken Output</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH5-SW15"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/FineTuning/FineTuning.html#//apple_ref/doc/uid/TP40004365-CH5-SW15">Embedded Speech Command Delimiters</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH5-SW12"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/FineTuning/FineTuning.html#//apple_ref/doc/uid/TP40004365-CH5-SW12">Overview of Embedded Speech Command Syntax</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH5-SW11"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/FineTuning/FineTuning.html#//apple_ref/doc/uid/TP40004365-CH5-SW11">The OS X Embedded Speech Commands</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH5-SW14"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/FineTuning/FineTuning.html#//apple_ref/doc/uid/TP40004365-CH5-SW14">Embedded Speech Command Errors</a></span></li></ul></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH5-SW4"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/FineTuning/FineTuning.html#//apple_ref/doc/uid/TP40004365-CH5-SW4">Use Phoneme Modifiers to Adjust Pronunciation</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH5-SW19"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/FineTuning/FineTuning.html#//apple_ref/doc/uid/TP40004365-CH5-SW19">Use Punctuation Correctly</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH5-SW7"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/FineTuning/FineTuning.html#//apple_ref/doc/uid/TP40004365-CH5-SW7">Use the TUNE Format to Supply Complex Pitch Contours</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH5-SW9"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/FineTuning/FineTuning.html#//apple_ref/doc/uid/TP40004365-CH5-SW9">Synchronize Speech with Application-Specific Actions</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH5-SW1"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/FineTuning/FineTuning.html#//apple_ref/doc/uid/TP40004365-CH5-SW1">Avoid Cross-Talk</a></span></li><li class="children " data-aref="//apple_ref/doc/uid/TP40004365-CH5-SW2" role="treeitem"><span class="disclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/FineTuning/FineTuning.html#//apple_ref/doc/uid/TP40004365-CH5-SW2">Four Ways to Improve Spoken Output</a></span><ul><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH5-SW20"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/FineTuning/FineTuning.html#//apple_ref/doc/uid/TP40004365-CH5-SW20">Adjust the Pronunciation of Troublesome Words</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH5-SW21"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/FineTuning/FineTuning.html#//apple_ref/doc/uid/TP40004365-CH5-SW21">Let the User Catch Up</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH5-SW22"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/FineTuning/FineTuning.html#//apple_ref/doc/uid/TP40004365-CH5-SW22">Focus the User’s Attention</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH5-SW23"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/FineTuning/FineTuning.html#//apple_ref/doc/uid/TP40004365-CH5-SW23">Liven It Up!</a></span></li></ul></li></ul></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH7-SW1"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/CommandSyntax/CommandSyntax.html#//apple_ref/doc/uid/TP40004365-CH7-SW1">Appendix A: Syntax of Embedded Speech Commands</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH9-SW1"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/Phonemes/Phonemes.html#//apple_ref/doc/uid/TP40004365-CH9-SW1">Appendix B: Phonemes</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH6-SW1"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/Glossary/Glossary.html#//apple_ref/doc/uid/TP40004365-CH6-SW1">Glossary</a></span></li><li class=" " data-aref="//apple_ref/doc/uid/TP40004365-CH2-SW1"><span class="nodisclosure"></span><span class="sectionName"><a href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/RevisionHistory.html#//apple_ref/doc/uid/TP40004365-CH2-SW1">Revision History</a></span></li></ul>
+    </nav>
+
+    <article id="contents" tabindex="0" role="main" class="isShowingTOC">
+        <div id="pageNavigationLinks_top" class="pageNavigationLinks">
+            <a class="nextLink" rel="next" href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/Glossary/Glossary.html" onclick="s_objectID=&quot;https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthes_1&quot;;return this.s_oc?this.s_oc(e):true">Next</a><a class="previousLink" rel="prev" href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/CommandSyntax/CommandSyntax.html" onclick="s_objectID=&quot;https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthes_2&quot;;return this.s_oc?this.s_oc(e):true">Previous</a>
+        </div>
+        <a id="top" name="top"></a>
+        <a id="INDEX" href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/index.html" style="display:none;" onclick="s_objectID=&quot;https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthes_3&quot;;return this.s_oc?this.s_oc(e):true"></a>
+        
+        <a name="//apple_ref/doc/uid/TP40004365-CH9-SW1" title="Phonemes"></a><h1 id="pageTitle">Phonemes</h1><p>This appendix lists the phoneme symbols for North American English that the MacinTalk synthesizer recognizes. Other languages and dialects use different phoneme collections. Whether you use a speech synthesis function to get the default phonemic representation of a word or you want to create it yourself, you need to know the symbols that represent individual phonemes. In addition, if you are developing a custom synthesizer that produces North American English speech, you must make sure it can interpret the phonemes listed in this appendix.</p><p>Phonemes divide into two groups: vowels and consonants. All phoneme symbols that represent vowels are pairs of uppercase letters. Consonants are represented by a single letter.</p><p>In <span class="content_text">Table B-1</span>, a phoneme symbol is followed by a word in which a letter or combination of letters is displayed in bold font. The letter or letter combination in bold exemplifies the sound the phoneme symbol represents. The two exceptions to this are the first two symbols, which stand for silence and a breath intake.</p><a name="//apple_ref/doc/uid/TP40004365-CH9-SW2" title="Table B-1North American English phoneme symbols"></a><div class="tableholder"><table class="graybox" border="0" cellspacing="0" cellpadding="5"><caption class="tablecaption"><strong class="caption_number">Table B-1</strong>&nbsp;&nbsp;North American English phoneme symbols</caption><tbody><tr><th scope="col" class="TableHeading_TableRow_TableCell"><p>Phoneme symbol</p></th><th scope="col" class="TableHeading_TableRow_TableCell"><p>Example of pronunciation</p></th></tr><tr><td scope="row"><p>%</p></td><td><p>(<em>silence</em>)</p></td></tr><tr><td scope="row"><p>@</p></td><td><p>(<em>breath intake</em>)</p></td></tr><tr><td scope="row"><p>AE</p></td><td><p>b<em class="newTerm">a</em>t</p></td></tr><tr><td scope="row"><p>EY</p></td><td><p>b<em class="newTerm">ai</em>t</p></td></tr><tr><td scope="row"><p>AO</p></td><td><p>c<em class="newTerm">au</em>ght</p></td></tr><tr><td scope="row"><p>AX</p></td><td><p><em class="newTerm">a</em>bout</p></td></tr><tr><td scope="row"><p>IY</p></td><td><p>b<em class="newTerm">ee</em>t</p></td></tr><tr><td scope="row"><p>EH</p></td><td><p>b<em class="newTerm">e</em>t</p></td></tr><tr><td scope="row"><p>IH</p></td><td><p>b<em class="newTerm">i</em>t</p></td></tr><tr><td scope="row"><p>AY</p></td><td><p>b<em class="newTerm">i</em>te</p></td></tr><tr><td scope="row"><p>IX</p></td><td><p>ros<em class="newTerm">e</em>s</p></td></tr><tr><td scope="row"><p>AA</p></td><td><p>f<em class="newTerm">a</em>ther</p></td></tr><tr><td scope="row"><p>UW</p></td><td><p>b<em class="newTerm">oo</em>t</p></td></tr><tr><td scope="row"><p>UH</p></td><td><p>b<em class="newTerm">oo</em>k</p></td></tr><tr><td scope="row"><p>UX</p></td><td><p>b<em class="newTerm">u</em>d</p></td></tr><tr><td scope="row"><p>OW</p></td><td><p>b<em class="newTerm">oa</em>t</p></td></tr><tr><td scope="row"><p>AW</p></td><td><p>b<em class="newTerm">ou</em>t</p></td></tr><tr><td scope="row"><p>OY</p></td><td><p>b<em class="newTerm">oy</em></p></td></tr><tr><td scope="row"><p>b</p></td><td><p><em class="newTerm">b</em>in</p></td></tr><tr><td scope="row"><p>C</p></td><td><p><em class="newTerm">ch</em>in</p></td></tr><tr><td scope="row"><p>d</p></td><td><p><em class="newTerm">d</em>in</p></td></tr><tr><td scope="row"><p>D</p></td><td><p><em class="newTerm">th</em>em</p></td></tr><tr><td scope="row"><p>f</p></td><td><p><em class="newTerm">f</em>in</p></td></tr><tr><td scope="row"><p>g</p></td><td><p><em class="newTerm">g</em>ain</p></td></tr><tr><td scope="row"><p>h</p></td><td><p><em class="newTerm">h</em>at</p></td></tr><tr><td scope="row"><p>J</p></td><td><p><em class="newTerm">j</em>ump</p></td></tr><tr><td scope="row"><p>k</p></td><td><p><em class="newTerm">k</em>in</p></td></tr><tr><td scope="row"><p>l</p></td><td><p><em class="newTerm">l</em>imb</p></td></tr><tr><td scope="row"><p>m</p></td><td><p><em class="newTerm">m</em>at</p></td></tr><tr><td scope="row"><p>n</p></td><td><p><em class="newTerm">n</em>ap</p></td></tr><tr><td scope="row"><p>N</p></td><td><p>ta<em class="newTerm">ng</em></p></td></tr><tr><td scope="row"><p>p</p></td><td><p><em class="newTerm">p</em>in</p></td></tr><tr><td scope="row"><p>r</p></td><td><p><em class="newTerm">r</em>an</p></td></tr><tr><td scope="row"><p>s</p></td><td><p><em class="newTerm">s</em>in</p></td></tr><tr><td scope="row"><p>S</p></td><td><p><em class="newTerm">sh</em>in</p></td></tr><tr><td scope="row"><p>t</p></td><td><p><em class="newTerm">t</em>in</p></td></tr><tr><td scope="row"><p>T</p></td><td><p><em class="newTerm">th</em>in</p></td></tr><tr><td scope="row"><p>v</p></td><td><p><em class="newTerm">v</em>an</p></td></tr><tr><td scope="row"><p>w</p></td><td><p><em class="newTerm">w</em>et</p></td></tr><tr><td scope="row"><p>y</p></td><td><p><em class="newTerm">y</em>et</p></td></tr><tr><td scope="row"><p>z</p></td><td><p><em class="newTerm">z</em>oo</p></td></tr><tr><td scope="row"><p>Z</p></td><td><p>mea<em class="newTerm">s</em>ure</p></td></tr></tbody></table></div>
+        <div id="pageNavigationLinks_bottom" class="pageNavigationLinks">
+            <a class="nextLink" rel="next" href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/Glossary/Glossary.html" onclick="s_objectID=&quot;https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthes_4&quot;;return this.s_oc?this.s_oc(e):true">Next</a><a class="previousLink" rel="prev" href="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/CommandSyntax/CommandSyntax.html" onclick="s_objectID=&quot;https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthes_5&quot;;return this.s_oc?this.s_oc(e):true">Previous</a>
+        </div><br>
+        <div class="copyright"><br><hr><div align="center"><p class="content_text" lang="en" dir="ltr"> Copyright © 2006 Apple Computer, Inc. All Rights Reserved.  <a href="http://www.apple.com/legal/internet-services/terms/site.html" target="_blank" onclick="s_objectID=&quot;http://www.apple.com/legal/internet-services/terms/site.html_1&quot;;return this.s_oc?this.s_oc(e):true">Terms of Use</a>   |  <a href="http://www.apple.com/privacy/" target="_blank" onclick="s_objectID=&quot;http://www.apple.com/privacy/_1&quot;;return this.s_oc?this.s_oc(e):true">Privacy Policy</a>  |  Updated: 2006-09-05</p></div></div>
+
+        <div id="pediaWindow">
+            <div id="pediaHeader"></div>
+            <div id="pediaBody"></div>
+        </div>
+    </article>
+
+    <div id="blackout">
+    <div id="preload"></div>
+</div>
+<div id="modal" aria-hidden="true">
+    <div id="closebox" tabindex="0" aria-label="Close feedback form" role="button"></div>
+    <div id="sending" class="hidden">
+        <h2 tabindex="0">Sending feedback…</h2>
+        <div id="sending_img"></div>
+    </div>
+    <div id="error" class="hidden">
+        <h2 tabindex="0">We’re sorry, an error has occurred.</h2>
+        <p>Please try submitting your feedback later.</p>
+        <div id="error_icon"></div>
+    </div>
+    <div id="success" class="hidden">
+        <h2 tabindex="0">Thank you for providing feedback!</h2>
+        <p>Your input helps improve our developer documentation.</p>
+        <div id="thank_you_icon"></div>
+    </div>
+    
+    <form id="feedback" action="https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/SpeechSynthesisProgrammingGuide/Phonemes/Phonemes.html#" method="post">
+        <div class="left-leaf">
+            <h2 id="helpful_title" data-asterisk="a1" tabindex="0">How helpful is this document?</h2>     
+            <sup id="a1" class="asterisk" aria-hidden="true">*</sup>
+
+            <div id="star_group" role="radiogroup" aria-required="true">
+                <label> 
+                    <input class="radio" type="radio" name="helped" value="1"> 
+                    Very helpful
+                </label>
+                <label> 
+                    <input class="radio" type="radio" name="helped" value="2"> 
+                    Somewhat helpful
+                </label>
+                <label>
+                    <input class="radio" type="radio" name="helped" value="3"> 
+                    Not helpful
+                </label>
+            </div>
+        </div>
+        <div class="right-leaf">
+            <h2>How can we improve this document?</h2>
+            <div id="improve" class="checkboxes">
+                <label>
+                    <input type="checkbox" name="typo"> 
+                    Fix typos or links
+                </label>
+                <label>
+                    <input type="checkbox" name="infoIncorrect"> 
+                    Fix incorrect information
+                </label>
+                <label>
+                    <input type="checkbox" name="needs_examples"> 
+                    Add or update code samples
+                </label>
+                <label>
+                    <input type="checkbox" name="needs_art"> 
+                    Add or update illustrations
+                </label>
+                <label>
+                    <input type="checkbox" name="missingInfo"> 
+                    Add information about...
+                </label>
+            </div>
+        </div>
+
+        <textarea id="comment" name="problem" cols="70" rows="8" placeholder="Please tell us more about your experience with this document" data-asterisk="a2" required=""></textarea>
+        <sup id="a2" class="asterisk" aria-hidden="true">*</sup>
+
+        <p class="fineprint">
+            <em aria-hidden="true"><span>*</span> Required information</em>
+        </p> 
+
+        <input id="submit" type="button" value="Send">
+
+        <section id="legal">
+            <p>
+                To submit a product bug or enhancement request, please visit the 
+                <a href="https://developer.apple.com/bugreporter/" target="_blank" onclick="s_objectID=&quot;https://developer.apple.com/bugreporter/_1&quot;;return this.s_oc?this.s_oc(e):true">Bug Reporter</a> 
+                page.
+            </p>
+            <p>
+                Please read <a href="http://www.apple.com/legal/policies/ideas.html" target="_blank" onclick="s_objectID=&quot;http://www.apple.com/legal/policies/ideas.html_1&quot;;return this.s_oc?this.s_oc(e):true">Apple's Unsolicited Idea Submission Policy</a> 
+                before you send us your feedback.
+            </p> 
+        </section>
+    </form>
+</div>
+
+    
+    <script charset="utf-8" src="./Phonemes_files/prototype.js"></script>
+    <script src="./Phonemes_files/library.js"></script>
+
+
+</body></html>
